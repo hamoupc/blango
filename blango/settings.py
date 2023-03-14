@@ -98,7 +98,11 @@ class Dev(Configuration):
                                 default=f"sqlite:///{BASE_DIR}/alternative_db.sqlite3",),
             }
 
-
+    PASSWORD_HASHERS = [
+      'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+      'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+      'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+      ]
     # Password validation
     # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
