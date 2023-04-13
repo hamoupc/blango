@@ -57,7 +57,8 @@ class Dev(Configuration):
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
-        'rest_framework', 
+        'rest_framework',
+        'drf_yasg', 
         ]
 
     MIDDLEWARE = [
@@ -179,6 +180,13 @@ class Dev(Configuration):
         "level": "DEBUG",
         "formatter": "verbose",
         }
+    }
+
+    SWAGGER_SETTINGS = {
+      "SECURITY_DEFINITIONS": {
+          "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+          "Basic": {"type": "basic"},
+      }
     }
 
 
